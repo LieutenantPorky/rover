@@ -1,4 +1,4 @@
-#! python
+#! python3
 
 '''
 V 1.0 GUI serial interface for robot - allows to define
@@ -7,7 +7,6 @@ bytecodes to be sent, logs data
 
 import json
 from tkinter import *
-import keyboard
 import serial
 import io
 
@@ -31,11 +30,11 @@ arbitrary code - good hack for init stuff). Should be take the widget as an argu
 lambda widget : widget.pack(side = LEFT)
 
 '''
-    def addWidgetFxn(self, widgetFxn, kwd, packFxn = None):
-        widget = widgetFxn(self.frame, kwd)
-        if (packFxn): packFxn(widget)
-        else: widget.pack()
-        self.widgets.append(widget)
+def addWidgetFxn(self, widgetFxn, kwd, packFxn = None):
+    widget = widgetFxn(self.frame, kwd)
+    if (packFxn): packFxn(widget)
+    else: widget.pack()
+    self.widgets.append(widget)
 
 #Initial setup
 root = Tk()
